@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.java.dao.WebMagicMapper">
+
+    <select id="show" resultType="map">
+      select * from webmagics
+    </select>
+
+    <insert id="add" parameterType="map">
+        insert  webmagics values
+        <foreach item="value" index="key" collection="map.entrySet()" separator ="," >
+            <if test="key!=null and value!=null">
+              (null,#{key},#{value},sysdate())
+            </if>
+        </foreach>
+    </insert>
+
+</mapper>
