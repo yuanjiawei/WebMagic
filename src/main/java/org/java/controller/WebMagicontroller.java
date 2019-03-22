@@ -62,9 +62,9 @@ public class WebMagicontroller implements PageProcessor {
     }
 
     public Map ret(){
-        for (Map.Entry<String,String> m:titles.entrySet()) {
+        /*for (Map.Entry<String,String> m:titles.entrySet()) {
             System.out.println( m.getKey()+ m.getValue());
-        }
+        }*/
             return titles;
     }
 
